@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #f8fafc;
+  --bg-shade: #f1f5f9;
+  --bg-shade-2: #e2e8f0;
+  --text-color: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(255, 255, 255, 0.5);
+  --primary-color: #f43f5e; /* Tomato Red */
+  --primary-hover: #e11d48;
+  --primary-glow: rgba(244, 63, 94, 0.4);
+  --secondary-color: #10b981; /* Leaf Green */
+  --secondary-glow: rgba(16, 185, 129, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --dropzone-bg: rgba(241, 245, 249, 0.7);
+  --dropzone-border: #cbd5e1;
+}
+
+[data-theme='dark'] {
+  --bg-color: #0c1120;
+  --bg-shade: #1e293b;
+  --bg-shade-2: #020617;
+  --text-color: #f8fafc;
+  --card-bg: rgba(15, 23, 42, 0.75);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --primary-color: #fb7185;
+  --primary-hover: #f43f5e;
+  --primary-glow: rgba(251, 113, 133, 0.3);
+  --secondary-color: #34d399;
+  --secondary-glow: rgba(52, 211, 153, 0.3);
+  --glass-bg: rgba(15, 23, 42, 0.6);
+  --shadow-color: rgba(0, 0, 0, 0.6);
+  --dropzone-bg: rgba(30, 41, 59, 0.7);
+  --dropzone-border: #334155;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+body {
+  background: linear-gradient(-45deg, var(--bg-shade), var(--bg-color), var(--bg-shade-2));
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* User's tailwind utilities mapped since tailwind isn't installed */
+.flex { display: flex; }
+.items-center { align-items: center; }
+.gap-2 { gap: 0.5rem; }
+.text-4xl { font-size: 2.25rem; }
